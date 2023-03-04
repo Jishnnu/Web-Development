@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html'%}
+{% block content %}
+<div class="page-center container">
+  <br><br><br><br><br><br>
+  <h1>Login</h1>
+  <form method="POST">
+    {%csrf_token%}
+    {%for field in form%}
+    {{field.errors}}
+    <label>{{field.label}}</label>
+    <input type="{% if field.label == 'Password' %}password{% else %}input{% endif %}" name="{{field.name}}"
+      class="form-control" />
+    {%endfor%}
+    <br />
+    <button type="submit" class="btn btn-primary">LOGIN</button>
+  </form> <br>
+  <h6> <small>Not Registered Yet?</small> <a href='/register'> SIGN UP</a>
+  </h6>
+</div>
+{% endblock %}

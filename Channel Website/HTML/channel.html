@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> BUZZHUB </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='channel.js') }}"></script>
+</head>
+
+<body>
+    <p style="font-family:century gothic;font-size: 21px;font-weight: bold;font-style: normal;"> <span
+            id="display_label" style="color:blue"> </span> @ BUZZHUB</p>
+
+    <div class="grid-container">
+        <div class="side">
+            <div class="online">
+
+                <div class="card">
+                    <div class="card-override card-header text-center">ONLINE: <span id="online_count">0</span></div>
+                    <div class="card-body">
+                        <div id="online-list">
+                            <table class="table table-striped">
+                                <tbody id="online_table">
+                                    {% for display in online_list %}
+                                    <tr>
+                                        <td>{{ display }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="area-overlap channels">
+
+                <div class="card">
+                    <div class="card-override card-header text-center">CHANNELS</div>
+                    <div class="card-body">
+                        <div id="channel-list">
+                            <table class="table table-striped">
+                                <tbody id="channel_table">
+                                    {% for channel in channel_list %}
+                                    <tr>
+                                        <td> # <a href="{{ url_for('channel', name=channel) }}"> {{ channel }} </a></td>
+                                        {% endfor %}
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div><br>
+                        <button button class="btn btn-primary" id="new-channel-button"
+                            style="width: 100%;">CREATE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+
+            <div class="chat">
+                <div class="card">
+                    <div class="card-override card-header text-center"># {{ current_channel }}</div>
+                    <div class="card-body">
+                        <div id="chat-container">
+                            <div id="messages-container">
+                                {% for message in messages %}
+                                <article class="message">
+                                    <span class="user">{{message[0]}}</span> <span class="time">{{message[1]}}</span>
+                                    <p>{{message[2]}}</p>
+                                </article>
+                                {% endfor %}
+                            </div>
+                            <br>
+                            <div class="flex">
+                                <button class="btn btn-primary" id="send-button" required maxlength="150">SEND</button>
+                                <div class="input-group">
+                                    <input class="form-control" id="message-input" placeholder="Enter Your Message ..."
+                                        required maxlength="150">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

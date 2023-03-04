@@ -1,0 +1,123 @@
+input {
+  font-family: century gothic;
+  font-size: 15px;
+  text-align: center;
+  background-color: white;
+  padding: 3px;
+}
+
+input:hover {
+  background-color: #FFFFF0;
+}
+
+button {
+  color: white;
+}
+
+button:hover {
+  background-color: #FFFFF0;
+}
+
+footer:hover {
+  color: #800000;
+}
+
+p {
+  padding: 30px;
+  font-family: century gothic;
+  text-align: left;
+
+}
+
+table th,
+td {
+  border: 1px solid black;
+  padding: 21px;
+  width: 399px;
+}
+
+table {
+  margin-left: 21px;
+  margin-right: 21px;
+}
+
+table th {
+  text-align: center;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+img {
+  border-radius: 9px;
+}
+
+h1 {
+  float: left;
+  font-family: century gothic;
+  font-weight: lighter;
+  padding: 21px;
+  font-size: 30px;
+
+}
+
+h2 {
+  float: left;
+  font-family: century gothic;
+  font-weight: lighter;
+  padding: 21px;
+  font-size: 30px;
+}
+
+h5,
+h3 {
+  padding: 3px;
+  margin-left: 3px;
+  font-family: century gothic;
+}
+
+h6 {
+  margin-left: 12px;
+  font-family: century gothic;
+  font-weight: bolder;
+
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: century gothic;
+  color: #1e1e1e;
+  padding: 0 30px;
+}
+
+ul li a:hover {
+  color: #800000;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+  line-height: 100px;
+  float: right;
+}
+
+ol li {
+  font-family: century gothic;
+  padding: 18px;
+  margin: 12px;
+
+}
+
+ol ol li {
+  padding: 3px;
+}

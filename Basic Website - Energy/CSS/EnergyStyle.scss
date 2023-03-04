@@ -1,0 +1,27 @@
+
+
+%message{
+  background-color: #fff;
+}
+ul{
+  li{
+    list-style: none;
+     }
+  li a {
+     text-decoration: none;
+       }
+    }
+    
+nav{
+  @extend %message;
+  width: 100%;
+  height: 100px;
+}
+
+input{
+  @extend %message;
+  font-family: century gothic;
+  font-size: 24px;
+  text-align: center;
+  float: left;
+}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class='w-50 mx-auto my-2 p-1 text-center container'>{{log_in_message}}</div>
+<div class='row no-gutters container'>
+    <div class='col p-5'>
+        <form class='form-inline border border-danger p-3 bg-light' action="{{url_for('login')}}" method="post">
+            <legend class='text-center'>REGISTER</legend>
+            <input class='form-control w-50 m-1' type="email" name="email" required> EMAIL
+            <input class='form-control w-50 m-1' type="password" id='userPassword' onkeyup="passwordMatch()"
+                name="userPassword" minlength="8" maxlength="15" required> PASSWORD
+            <input class='form-control w-50 m-1' type="password" id='userPasswordRepeat' onkeyup="passwordMatch()"
+                name="userPasswordRepeat" minlength="8" maxlength="15" required> REPAEAT PASSWORD
+            <button class="btn btn-success m-1 w-100" id='submitSignUpForm' type="submit">REGISTER</button>
+        </form>
+    </div>
+    <div class='col p-5'>
+        <form class='form-inline border border-danger p-3 bg-light' action="{{url_for('login')}}" method="post">
+            <legend class='text-center'>LOGIN</legend>
+            <input class='form-control w-50 m-1' type="email" name="emailLogIn" required> EMAIL
+            <input class='form-control w-50 m-1' type="password" name="userPasswordLogIn" required>PASSWORD
+            <button class="btn btn-success m-1 w-100" type="submit">LOGIN</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

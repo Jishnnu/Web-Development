@@ -11,7 +11,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-engine = create_engine(os.getenv("postgres://hpdbtvupqpmqix:cdb4964626f2dcfc3f46ba7320e80890ea85d57a0ebb1fa8edaf1c57fc3e943f@ec2-54-227-245-146.compute-1.amazonaws.com:5432/da3vtf4le0cj71"))
+engine = create_engine(os.getenv("YOUR_POSTGRE_SQL_URI"))
 db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
